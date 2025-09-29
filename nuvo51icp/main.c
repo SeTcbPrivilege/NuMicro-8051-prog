@@ -34,6 +34,7 @@
 #include <string.h>
 #include <stdbool.h>
 
+#include "logging.h"
 #include "n51_icp.h"
 #include "n51_pgm.h"
 #include "config.h"

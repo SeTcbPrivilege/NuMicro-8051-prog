@@ -30,6 +30,7 @@
 #include <stdio.h>
 #include "n51_icp.h"
 #include "n51_pgm.h"
+#include "logging.h"
 #ifndef DEFAULT_BIT_DELAY
 #include "delay.h"
 #endif
@@ -121,6 +122,7 @@ static uint32_t mass_erase_hold_time = DEFAULT_MASS_ERASE_HOLD_TIME;
 
 static void N51ICP_bitsend(uint32_t data, int len, uint32_t udelay)
 {
+	log(TRACE1, "bitsend %d bits %x", len, data);
 	N51PGM_dat_dir(1);
 	int i = len;
 	while (i--) {
@@ -293,6 +295,8 @@ static uint8_t N51ICP_read_byte(int end)
 	N51PGM_set_clk(0);
 	USLEEP(DEFAULT_BIT_DELAY);
 	N51PGM_set_dat(0);
+
+	log(TRACE1, "read byte %hhx (end %d)", data, end);
 
 	return data;
 }
