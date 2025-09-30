@@ -227,6 +227,7 @@ def build(setup_kwargs):
                         "nuvo51icp/n51_icp.c",
                         "nuvo51icp/rpi.c",
                         "nuvo51icp/main.c",
+                        "nuvo51icp/logging.c"
                     ],
                     "shared": True,
                     "cflags": ["-g", "-DRPI",  "-DPRINT_CONFIG_EN"],
@@ -241,6 +242,7 @@ def build(setup_kwargs):
                         "nuvo51icp/n51_icp.c",
                         "nuvo51icp/rpi-pigpio.c",
                         "nuvo51icp/main.c",
+                        "nuvo51icp/logging.c"
                     ],
                     "shared": True,
                     "cflags": ["-g", "-DRPI", "-DPRINT_CONFIG_EN", "-DUSE_PIGPIO"],
